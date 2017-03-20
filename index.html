@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>xiaohui-个人主页</title>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/examples.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="js/scrolloverflow.js"></script>
+
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+             // 延时100毫秒执行
+                setTimeout(function () {
+                    $('.section').eq(0).addClass('current');
+                }, 100);
+
+            $('#fullpage').fullpage({
+                menu: '#menu',
+                anchors: ['firstPage', 'secondPage', '3rdPage','fourthPage'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+
+                onLeave: function(index, nextIndex, direction){
+                  if(nextIndex === 4){
+                    var destinationSection = $('.section').eq(nextIndex-1);
+                    destinationSection.addClass('load-background');
+                  }
+
+                  $('.section').removeClass('current');
+                
+                // 延时100毫秒执行
+                setTimeout(function () {
+                    $('.section').eq(nextIndex - 1).addClass('current');
+                }, 100);
+              
+                }
+
+            });
+
+           
+        });
+        
+    </script>
+
+</head>
+<body>
+
+<ul id="menu">
+    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">首页</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">关于我</a></li>
+    <li data-menuanchor="3rdPage"><a href="#3rdPage">兴趣</a></li>
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">联系我</a></li>
+</ul>
+
+<div id="fullpage">
+    <div class="section" id="section0">
+        <div class="intro">
+            <!--header-->
+        <div class="header" id="head">
+            <div class="headcontent center">
+                <h1>Welcome!</h1>
+                <p class="introduce">第一个个人主页，没有技术大牛的经验分享，没有绚丽多彩的故事旅途，只有一个简单真实的我。</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <!--about me-->
+        <div class="aboutme" id="about">
+            <div class="center">
+                <p class="title">陈晓惠</p>
+                <p class="content">
+                    1995年4月/金牛座/福州<br/>教育背景：集美大学/电子科学与技术<br/>择业迷途：偏硬件方向转行，大三下开始学习产品方向的相关知识，<br/>暑假找到公司实习，与前端工作人员接触，了解前端这个岗位，<br/>大四上参加秋招并思考就业方向，之后才开始前端的学习,<br/>似乎方向的确定有点晚，不过我会抱着热情学下去
+                </p>
+                <div class="girl">
+                    <img src="imgs/girl.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <!--hobbies-->
+        <div class="hobbies" id="hobby">
+            <div class="center">
+                <div class="slide" id="slide1">
+                    <div class="hamonica">
+                    <img src="imgs/harmonica.png" alt="">
+                    <p>
+                        有时候，一个人，一把琴，一缕清风，足矣<br/>从小学开始接触口琴，时不时的会抄个谱子吹个曲子<br/>吹了这么久并没有特别的厉害，自己开心就好
+                    </p>
+                </div>
+                </div>
+
+                <div class="slide" id="slide2">
+                    <div class="volleyball">
+                    <p>
+                        有时候，一群人，一颗球，一把汗水，足矣<br/>大学开始接触排球，认识了一群人，<br/>曾经打球到半夜十二点然后兴奋失眠，<br/>为了比赛的一颗球不顾一切的向前扑去
+                    </p>
+                    <img src="imgs/playground.png" alt="">
+                </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <!--contact me-->
+        <div class="contactme" id="contact">
+            <div class="headtop">
+                <img src="imgs/headshot.png" alt="">
+            </div>
+            <h1>Contact Me</h1>
+            <p>
+                Email:xiaohuiown@163.com<br/>QQ:1844638665
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

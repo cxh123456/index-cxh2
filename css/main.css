@@ -1,0 +1,240 @@
+﻿/*css 初始化*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family:"Arial","宋体","Microsoft YaHei";
+}
+.center {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+
+/*导航*/
+#menu li {
+    display:inline-block;
+    margin: 10px;
+    color: #000;
+    background:#fff;
+    background: rgba(255,255,255, 0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#menu li.active{
+    background:#666;
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+}
+#menu li a{
+    text-decoration:none;
+    color: #000;
+}
+#menu li.active a:hover{
+    color: #000;
+}
+#menu li:hover{
+    background: rgba(255,255,255, 0.8);
+}
+#menu li a,
+#menu li.active a{
+    padding: 9px 18px;
+    display:block;
+}
+#menu li.active a{
+    color: #fff;
+}
+#menu{
+    position:fixed;
+    top:0;
+    left:0;
+    height: 40px;
+    z-index: 70;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+
+/*首页*/
+.header {
+    height: 660px;
+    background-color: coral;
+}
+.header .headbox {
+    width: 100%;
+    height: 210px;
+    background-color: rgba(255,94,82,0.5);
+}
+.header .headcontent {
+    position: relative;
+}
+
+.header h1 {
+    margin: 0 auto;
+    padding-top: 225px;
+    height: 35px;
+    width: 322px;
+    line-height:35px;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+/*第一屏动画起始状态*/
+.section:first-child .header .introduce {
+    margin-top: 72px;
+    font-size: 19px;
+    font-weight: 700;
+    opacity: 0;
+    text-align: center;
+
+}
+
+/*第一屏动画终止状态*/
+.current.section:first-child .header .introduce {
+    opacity: 1;
+    font-size: 22px;
+    transition: all 1s ease-out 0.3s;
+}
+
+
+/*关于我*/
+.aboutme {
+    height: 656px;
+    width: 100%;
+    background-color: #f3ede5;
+}
+.aboutme .title {
+    padding-top: 182px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+    color: #666666;
+}
+.aboutme .content {
+    line-height: 36px;
+    font-size: 20px;
+    color: #999999;
+    position: absolute;
+    top: 244px;
+    left: 0;
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+}
+.current .aboutme .content {
+    animation: typing 2.5s steps(6) 1s forwards;
+}
+@keyframes typing {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 216px;
+    }
+}
+.aboutme .center {
+    position: relative;
+}
+.aboutme .center .girl {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*兴趣*/
+.hobbies {
+    height: 1120px;
+    background-color: #a9c6ff;
+}
+.hobbies .hamonica {
+    padding-top: 96px;
+    height: 428px;
+    position: relative;
+}
+.hobbies .hamonica p {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+}
+.hobbies .volleyball {
+    position: relative;
+}
+.hobbies .volleyball p {
+    position: absolute;
+    top: -68px;
+    left: 0;
+}
+.hobbies .volleyball img {
+    position: absolute;
+    top: -200px;
+    right: 0;
+}
+.hobbies p {
+    font-size: 20px;
+    line-height: 36px;
+    color: #666666;
+}
+
+/*联系我*/
+.contactme {
+    height: 666px;
+    background-color: #ffafa9;
+}
+.contactme .headtop {
+    text-align: center;
+    padding-top: 106px;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+@keyframes rotate {
+    0% {
+        transform : rotate(15deg);
+    }
+    50% {
+        transform : rotate(-15deg);
+    }
+    100% {
+        transform : rotate(15deg);
+    }
+}
+.contactme h1 {
+    text-align: center;
+    margin-top: 42px;
+    font-size: 32px;
+    font-weight: 700;
+}
+.contactme p {
+    text-align: center;
+    margin-top: 12px;
+    line-height: 28px;
+    color: #666666;
+    font-size: 18px;
+    font-weight: bold;
+}
+.box {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* Demos Menu
+ * --------------------------------------- */
+#demosMenu{
+    position:fixed;
+    bottom: 10px;
+    right:10px;
+    z-index: 999;
+}
