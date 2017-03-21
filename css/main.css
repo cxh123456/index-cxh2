@@ -126,7 +126,7 @@ body {
     overflow: hidden;
 }
 .current .aboutme .content {
-    animation: typing 2.5s steps(6) 1s forwards;
+    animation: typing 2.5s steps(6) forwards;
 }
 @keyframes typing {
     from {
